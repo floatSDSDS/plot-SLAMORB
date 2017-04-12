@@ -4,7 +4,7 @@ library(dplyr)
 library(ggplot2)
 
 # 设置路径
-path="E:/8sem/健浩"
+path="E:/git/plot-SLAMORB/"
 setwd(path)
 
 # Toggle.Seprate==T, seprate
@@ -32,5 +32,6 @@ Toggle.DelTime<-T
 
 
 setwd(path)
+path.data="orangepi_data_20170412"
 source('script/plot_switch170412.R', encoding = 'UTF-8')
 

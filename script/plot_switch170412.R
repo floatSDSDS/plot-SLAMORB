@@ -1,5 +1,5 @@
-
-setwd("orangepi_data_20170412")
+path.data=paste("src/",path.data,sep="")
+setwd(path.data)
 file.list<-list.files()
 ###########################################################
 pose.record<-list()
@@ -16,11 +16,11 @@ for(record.ith in 1:5){
   
   # time.record
   time.record[[record.ith]]<-as.data.frame(fread(file.list[record.ith+5],header=F))
-  time.record[[record.ith]]<-t(as.data.frame(strsplit(time.record[[record.ith]]$V5,":")))
+  time.record[[record.ith]]<-t(as.data.frame(strsplit(time.record[[record.ith]]$V1,":")))
   rownames(time.record[[record.ith]])<-1:dim(time.record[[record.ith]])[1]
   colnames(time.record[[record.ith]])<-c("frame.number","time")
   time.record[[record.ith]]<-as.data.frame(time.record[[record.ith]])
-  time.record[[record.ith]]$time<-as.numeric(gsub("s","",time.record[[record.ith]]$time))
+#  time.record[[record.ith]]$time<-as.numeric(gsub("s","",time.record[[record.ith]]$time))
   time.record[[record.ith]]$frame.number<-as.numeric(time.record[[record.ith]]$frame.number)
   if(Toggle.DelTime){
     time.record[[record.ith]]<-filter(time.record[[record.ith]],time<10)
