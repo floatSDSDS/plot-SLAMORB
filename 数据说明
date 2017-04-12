@@ -1,0 +1,12 @@
+pose_record_*.txt:
+三个数字依次代表三维坐标系中点的x,y,z坐标。按编号依次连接前后两个点。
+
+
+time_record_*.txt:
+每一个行只取左右一个数字，按编号画一个横坐标为Frame Number纵坐标为Location Time(s)的折线图。
+如“KEYPOINT:0.146919s HTTP_POST:0.219823s WS_SEND:0.279630s WS_RECE:0.324925s 0:0.326077s”只取0:0.326077
+0表示Frame Number
+0.326077表示Location Time(s)
+
+
+
