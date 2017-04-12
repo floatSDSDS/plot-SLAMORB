@@ -13,13 +13,14 @@ for(record.ith in 1:5){
   temp<-t(as.data.frame(strsplit(pose.record[[record.ith]]$x,":")))
   pose.record[[record.ith]]$x<-as.numeric(temp[,2])
   pose.record[[record.ith]]$frame.number<-as.numeric(temp[,1])+1
-  
+
   # time.record
   time.record[[record.ith]]<-as.data.frame(fread(file.list[record.ith+5],header=F))
   time.record[[record.ith]]<-t(as.data.frame(strsplit(time.record[[record.ith]]$V1,":")))
   rownames(time.record[[record.ith]])<-1:dim(time.record[[record.ith]])[1]
   colnames(time.record[[record.ith]])<-c("frame.number","time")
   time.record[[record.ith]]<-as.data.frame(time.record[[record.ith]])
+  time.record[[record.ith]]$time<-as.numeric(time.record[[record.ith]]$time)
 #  time.record[[record.ith]]$time<-as.numeric(gsub("s","",time.record[[record.ith]]$time))
   time.record[[record.ith]]$frame.number<-as.numeric(time.record[[record.ith]]$frame.number)
   if(Toggle.DelTime){
@@ -105,7 +106,7 @@ if(!Toggle.Seprate){
       panel.background = element_rect(fill = "white"),
       panel.border = element_rect(size=3)
     )
-  
+
   ggsave(filename=paste(paste(Outputname.pose,Sys.Date(),sep="-"),".eps",sep=""),
          g.pose.one,device="eps",
          width = 16,height = 9,units = "in")
