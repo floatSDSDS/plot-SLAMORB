@@ -18,7 +18,8 @@ library(ggplot2)
 library(showtext)
 showtext.auto()
 showtext.opts(dpi = 120)
-
+font.add("Times New Roman", "times.ttf") 
+#showtext.begin()
 
 # 设置路径
 path="E:/git/plot-SLAMORB/"
@@ -62,8 +63,8 @@ for(record.ith in 1:5){
 # Settings
 
 # 设置Pose和Time输出图片的存储路径
-result.pose<-"pose4-22"
-result.time<-"time4-22"
+result.pose<-"pose4-21"
+result.time<-"time4-21"
 
 # 设置输出文件名字
 Outputname.pose="Estimated Trajectory"
@@ -104,7 +105,7 @@ size.line.time=1
 size.marker.time=2
 
 # font
-font.famly="serif"
+font.famly="Times New Roman"
 
 # 绘制pose图，在result中找建立的文件夹（如本例中pose4-22）
 setwd(path);source('script/plot_trajectory.R', encoding = 'UTF-8')
@@ -116,4 +117,7 @@ g.pose.together
 setwd(path);source('script/plot_time.R', encoding = 'UTF-8')
 #检查图怎么样：
 g.time
-   
+
+
+# showtext.end()                  ## turn off showtext
+# dev.off()
