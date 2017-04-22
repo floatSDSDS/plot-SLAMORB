@@ -8,11 +8,9 @@
 library(data.table)
 library(dplyr)
 library(extrafont)
-font_import("Times New Roman.ttf")
-loadfonts(device="win")     
+font_import("Times New Roman")
+loadfonts(device="postscript")     
 library(ggplot2)
-
-
 
 # 设置路径
 path="E:/git/plot-SLAMORB/"
@@ -21,8 +19,6 @@ path.data<-paste("src/",path.data,sep="")
 setwd(path)
 
 #导入字体
-font_import("Times New Roman")   
-loadfonts(device="win")  
 # fonts()         #检查有什么字体可用  
 ###########################################################
 setwd(path.data)

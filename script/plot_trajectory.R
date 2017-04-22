@@ -28,8 +28,6 @@ g.pose.together<-ggplot(data=pose.temp,aes(x,y))+
     panel.border = element_rect(size=size.border)
   )
 
-grid.gedit("GRID.text",gp=gpar(fontfamily="Times New Roman"))
-
 
 ggsave(filename=paste(paste(Outputname.pose,10,11,Sys.Date(),sep="-"),".png",sep=""),
        g.pose.together,device="png",
