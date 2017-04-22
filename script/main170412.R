@@ -3,24 +3,29 @@
 # install.packages("dplyr",repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
 # install.packages("ggplot2",repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
 # install.packages("extrafont",repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
-install.packages("extrafontdb",repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
+# install.packages("extrafontdb",repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
+# install.packages("showtext",repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
 
 library(data.table)
 library(dplyr)
-library(extrafont)
-library(extrafontdb)
-font_import()
-y
-loadfonts(device="pdf")     
-loadfonts("win")
+# library(extrafont)
+# library(extrafontdb)
+# font_import()
+# y
+# loadfonts(device="pdf")     
+# loadfonts("win")
 library(ggplot2)
+library(showtext)
+showtext.auto()
+showtext.opts(dpi = 120)
+
 
 # 设置路径
 path="E:/git/plot-SLAMORB/"
 path.data="orangepi_data_20170412"
 path.data<-paste("src/",path.data,sep="")
 setwd(path)
-
+# "times.ttf"     "timesbd.ttf"   "timesbi.ttf"   "timesi.ttf"
 ###########################################################
 setwd(path.data)
 file.list<-list.files()
@@ -62,7 +67,8 @@ result.time<-"time4-22"
 
 # 设置输出文件名字
 Outputname.pose="Estimated Trajectory"
-Outputname.time="Computational Time in Sequence: MH_5_difficult"# of Each Dataset"
+Outputname.time="Computational Time"# of Each Dataset"
+
 
 # 输出pose文件索引
 file.index.pose=c(1,2)
@@ -84,7 +90,7 @@ pose.title=Outputname.pose
 pose.xlab="x(m)"
 pose.ylab="y(m)"
 
-time.title=Outputname.time
+time.title="Computational Time in Sequence: MH_5_difficult"
 time.xlab="Frame Number"
 time.ylab="Time(ms)"
 
@@ -97,6 +103,8 @@ size.marker.pose=4
 size.line.time=1
 size.marker.time=2
 
+# font
+font.famly="serif"
 
 # 绘制pose图，在result中找建立的文件夹（如本例中pose4-22）
 setwd(path);source('script/plot_trajectory.R', encoding = 'UTF-8')

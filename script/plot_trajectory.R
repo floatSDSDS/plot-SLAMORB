@@ -19,7 +19,7 @@ g.pose.together<-ggplot(data=pose.temp,aes(x,y))+
   theme(
 #    legend.background = element_rect(size=0.5, linetype="solid", colour ="darkblue"),
 #    legend.position="bottom",
-    text=element_text(family="Times New Roman"),
+    text=element_text(family = font.famly),#family="Times New Roman"),
     plot.title = element_text(size=size.title,hjust = 0.5),
     axis.text.x = element_text(size = size.axis),
     axis.text.y = element_text(size = size.axis),
@@ -33,8 +33,8 @@ g.pose.together
 ggsave(filename=paste(paste(Outputname.pose,10,11,Sys.Date(),sep="-"),".png",sep=""),
        g.pose.together,device="png",
        width = plot.width,height = plot.height,units = "in")
-ggsave(filename=paste(paste(Outputname.pose,10,11,Sys.Date(),sep="-"),".eps",sep=""),
-       g.pose.together,device="eps",
+ggsave(filename=paste(paste(Outputname.pose,10,11,Sys.Date(),sep="-"),".pdf",sep=""),
+       g.pose.together,device="pdf",
        width = plot.width,height = plot.height,units = "in")
 
 
