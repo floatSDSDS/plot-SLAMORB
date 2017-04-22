@@ -3,13 +3,16 @@
 # install.packages("dplyr",repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
 # install.packages("ggplot2",repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
 # install.packages("extrafont",repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
-
+install.packages("extrafontdb",repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
 
 library(data.table)
 library(dplyr)
 library(extrafont)
-font_import("Times New Roman")
-loadfonts(device="postscript")     
+library(extrafontdb)
+font_import()
+y
+loadfonts(device="pdf")     
+loadfonts("win")
 library(ggplot2)
 
 # 设置路径
@@ -18,8 +21,6 @@ path.data="orangepi_data_20170412"
 path.data<-paste("src/",path.data,sep="")
 setwd(path)
 
-#导入字体
-# fonts()         #检查有什么字体可用  
 ###########################################################
 setwd(path.data)
 file.list<-list.files()
@@ -60,8 +61,8 @@ result.pose<-"pose4-22"
 result.time<-"time4-22"
 
 # 设置输出文件名字
-Outputname.pose="Trajectory"
-Outputname.time="Computational Time"# of Each Dataset"
+Outputname.pose="Estimated Trajectory"
+Outputname.time="Computational Time in Sequence: MH_5_difficult"# of Each Dataset"
 
 # 输出pose文件索引
 file.index.pose=c(1,2)
@@ -85,7 +86,7 @@ pose.ylab="y(m)"
 
 time.title=Outputname.time
 time.xlab="Frame Number"
-time.ylab="Computational Time(s)"
+time.ylab="Time(ms)"
 
 # 边框粗细
 size.border=3
