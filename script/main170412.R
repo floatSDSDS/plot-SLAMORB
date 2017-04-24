@@ -63,8 +63,8 @@ for(record.ith in 1:5){
 # Settings
 
 # 设置Pose和Time输出图片的存储路径
-result.pose<-"pose4-21"
-result.time<-"time4-21"
+result.pose<-"pose4-23"
+result.time<-"time4-23"
 
 # 设置输出文件名字
 Outputname.pose="Estimated Trajectory"
@@ -76,13 +76,13 @@ file.index.pose=c(1,2)
 file.index.time=c(1)
 
 # 输出图长宽
-plot.width=8
-plot.height=5
+plot.width=16
+plot.height=10
 
 # 文字大小，注意ggplot2里，图表的大小是相对的，但字体的大小是绝对的，需要结合输出长宽一起改
-size.title=20
-size.labs=17  #坐标轴标题
-size.axis=12  #坐标轴刻度
+size.title=30
+size.labs=25  #坐标轴标题
+size.axis=15  #坐标轴刻度
 # size.legend=12  #图例大小
 # size.legend.title=17  #图例标签
 
@@ -96,11 +96,11 @@ time.xlab="Frame Number"
 time.ylab="Time(ms)"
 
 # 边框粗细
-size.border=3
+size.border=1
 
 # 图上粗细大小
-size.line.pose=2
-size.marker.pose=4
+size.line.pose=.75
+size.marker.pose=2.5
 size.line.time=1
 size.marker.time=2
 
